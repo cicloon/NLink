@@ -9,6 +9,8 @@
 import UIKit
 import XCTest
 
+import NLink
+
 class NLinkTests: XCTestCase {
     
     override func setUp() {
@@ -21,16 +23,17 @@ class NLinkTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
+    func testViewDidLoad() {
+        let v = ViewController()
         XCTAssert(true, "Pass")
+        XCTAssertNotNil(v.view, "View Did Not Load")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
+//    
+//    func testPerformanceExample() {
+//        // This is an example of a performance test case.
+//        self.measureBlock() {
+//            // Put the code you want to measure the time of here.
+//        }
+//    }
     
 }
