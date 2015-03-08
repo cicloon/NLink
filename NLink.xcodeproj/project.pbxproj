@@ -14,10 +14,10 @@
 		570C45701AA2311400977EF5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570C456E1AA2311400977EF5 /* LaunchScreen.xib */; };
 		570C457C1AA2311400977EF5 /* NLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570C457B1AA2311400977EF5 /* NLinkTests.swift */; };
 		570C45861AA2316D00977EF5 /* BasicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570C45851AA2316D00977EF5 /* BasicGame.swift */; };
+		57164F801AACFFEB00205178 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57164F7F1AACFFEB00205178 /* Board.swift */; };
+		57164F811AACFFF700205178 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57164F7F1AACFFEB00205178 /* Board.swift */; };
 		57197D6C1AA4F795004DEAFE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57197D6B1AA4F795004DEAFE /* Player.swift */; };
-		57197D6E1AA50658004DEAFE /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57197D6D1AA50658004DEAFE /* Board.swift */; };
 		57197D6F1AAA2A90004DEAFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570C45671AA2311400977EF5 /* ViewController.swift */; };
-		57197D701AAA2B3F004DEAFE /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57197D6D1AA50658004DEAFE /* Board.swift */; };
 		57197D711AAA2B4F004DEAFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570C45651AA2311400977EF5 /* AppDelegate.swift */; };
 		57197D721AAA2B4F004DEAFE /* BasicGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570C45851AA2316D00977EF5 /* BasicGame.swift */; };
 		57197D731AAA2B4F004DEAFE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57197D6B1AA4F795004DEAFE /* Player.swift */; };
@@ -50,8 +50,8 @@
 		570C457A1AA2311400977EF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		570C457B1AA2311400977EF5 /* NLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLinkTests.swift; sourceTree = "<group>"; };
 		570C45851AA2316D00977EF5 /* BasicGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicGame.swift; sourceTree = "<group>"; };
+		57164F7F1AACFFEB00205178 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		57197D6B1AA4F795004DEAFE /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		57197D6D1AA50658004DEAFE /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Board.swift; path = ../Board.swift; sourceTree = "<group>"; };
 		57197D741AAA2E16004DEAFE /* PlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 		57197D761AAA33C5004DEAFE /* BoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
 		57197D781AAA59F5004DEAFE /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		570C45621AA2311400977EF5 /* NLink */ = {
 			isa = PBXGroup;
 			children = (
-				57197D6D1AA50658004DEAFE /* Board.swift */,
+				57164F7F1AACFFEB00205178 /* Board.swift */,
 				570C45651AA2311400977EF5 /* AppDelegate.swift */,
 				570C45671AA2311400977EF5 /* ViewController.swift */,
 				570C45851AA2316D00977EF5 /* BasicGame.swift */,
@@ -241,8 +241,8 @@
 			files = (
 				57197D6C1AA4F795004DEAFE /* Player.swift in Sources */,
 				57197D791AAA59F5004DEAFE /* Game.swift in Sources */,
+				57164F801AACFFEB00205178 /* Board.swift in Sources */,
 				570C45681AA2311400977EF5 /* ViewController.swift in Sources */,
-				57197D6E1AA50658004DEAFE /* Board.swift in Sources */,
 				570C45861AA2316D00977EF5 /* BasicGame.swift in Sources */,
 				570C45661AA2311400977EF5 /* AppDelegate.swift in Sources */,
 			);
@@ -254,13 +254,13 @@
 			files = (
 				57197D751AAA2E16004DEAFE /* PlayerTests.swift in Sources */,
 				57197D7A1AAA59F5004DEAFE /* Game.swift in Sources */,
+				57164F811AACFFF700205178 /* Board.swift in Sources */,
 				57197D711AAA2B4F004DEAFE /* AppDelegate.swift in Sources */,
 				57197D721AAA2B4F004DEAFE /* BasicGame.swift in Sources */,
 				57197D6F1AAA2A90004DEAFE /* ViewController.swift in Sources */,
 				570C457C1AA2311400977EF5 /* NLinkTests.swift in Sources */,
 				57197D731AAA2B4F004DEAFE /* Player.swift in Sources */,
 				57197D771AAA33C5004DEAFE /* BoardTests.swift in Sources */,
-				57197D701AAA2B3F004DEAFE /* Board.swift in Sources */,
 				57197D7D1AAA5A3B004DEAFE /* GameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
