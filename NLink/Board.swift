@@ -42,16 +42,20 @@ class Board {
         let horizontal: Int
         let vertical: Int
         
-        func getAllDirections() -> [Direction]{
+        static func getBasicDirections() -> [Direction]{
             var directions = [Direction]()
-            
-            for i in -1...1{
-                for j in -1...1{
-                    directions.append( Direction(horizontal: i, vertical: j) )
-                }
-            }
+            directions.append( Direction(horizontal: 0, vertical: 1) )
+            directions.append( Direction(horizontal: 1, vertical: 0) )
+            directions.append( Direction(horizontal: 1, vertical: 1) )
+            directions.append( Direction(horizontal: -1, vertical: 1) )
             return directions
         }
+        
+        func inverse() -> Direction{
+            var newDirection = Direction( horizontal: self.horizontal * -1,  vertical: self.vertical * -1 )
+            return newDirection
+        }
+        
     }
     
     
@@ -80,7 +84,7 @@ class Board {
     }
     
     func getPosition(position: Position) -> PositionType? {
-        if position.row < self.numColumns && position.column < self.numRows {
+        if position.row < self.numRows  && position.row >= 0 && position.column < self.numColumns && position.column >= 0{
             return self.positions[position.row][position.column]
         }
         else {
@@ -101,25 +105,31 @@ class Board {
     }
     
     func checkLinkInPosition(position: Position, player: Player, linksToWin: Int) -> Bool{
-        return false        
+        var victory = false
+        for direction in Direction.getBasicDirections() {
+            if linksInDirection(direction, position: position, player: player) + linksInDirection(direction.inverse(), position: position, player: player) > linksToWin{
+                victory = true
+            }
+        }
+        return victory
     }
     
     private func linksInDirection(dir: Direction, position: Position, player: Player) -> Int{
-    
-//        if let position = getPosition(row, column: column){
-//            switch position{
-//            case .PlayerSlug(let positionPlayer) {
-//                if positionPlayer == player {
-//                    return 1 +
-//                }
-//            }
-//                
-//                case .Empty()
-//            }
-//        }
-        return 0
+        var links = 0
+        if let positionType = getPosition(position){
+            switch positionType{
+                
+            case .PlayerSlug(let positionPlayer):
+
+                if player == positionPlayer{
+                    links = 1 + linksInDirection(dir, position: position.newPositionFromDirection(dir), player: player)
+                }
+                
+            case .Empty:
+                links = 0
+            }
+        }
+        return links
     }
     
-    
-
 }

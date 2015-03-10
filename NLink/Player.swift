@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Player {
+class Player: NSObject {
     
     var name = "Undefined"
     private var color = ""
@@ -21,6 +21,5 @@ class Player {
     func getName() -> String{
         return self.name
     }
-    
     
 }

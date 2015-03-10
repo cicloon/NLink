@@ -65,6 +65,101 @@ class BoardTests: XCTestCase {
         XCTAssertEqual(board.firstFreeRowInColumn(2)!, 2, "should be the first row")
     }
     
+    
+    func testCheckLinkInPositionWithHorizontalLink(){
+        let board = Board(numRows: 5, numColumns: 5)
+        let player = Player(name: "testPlayer")
+        
+        board.setPosition(Board.Position(row: 0, column: 1), player: player)
+        board.setPosition(Board.Position(row: 0, column: 2), player: player)
+        board.setPosition(Board.Position(row: 0, column: 3), player: player)
+        
+        var victory = false
+        
+        victory = board.checkLinkInPosition(Board.Position(row: 0, column: 1), player: player, linksToWin: 3)
+        
+        XCTAssertTrue(victory, "the player should win checking the position 0, 1")
+
+        victory = board.checkLinkInPosition(Board.Position(row: 0, column: 2), player: player, linksToWin: 3)
+        
+        XCTAssertTrue(victory, "the player should win checking the position 0, 2")
+        
+        victory = board.checkLinkInPosition(Board.Position(row: 0, column: 3), player: player, linksToWin: 3)
+        
+        XCTAssertTrue(victory, "the player should win checking the position 0, 3")
+        
+    }
+    
+    func testCheckLinkInPositionWithVerticalLink(){
+        let board = Board(numRows: 5, numColumns: 5)
+        let player = Player(name: "testPlayer")
+        
+        board.setPosition(Board.Position(row: 0, column: 1), player: player)
+        board.setPosition(Board.Position(row: 1, column: 1), player: player)
+        board.setPosition(Board.Position(row: 2, column: 1), player: player)
+        
+        var victory = false
+        
+        victory = board.checkLinkInPosition(Board.Position(row: 0, column: 1), player: player, linksToWin: 3)
+        
+        XCTAssertTrue(victory, "the player should win checking the position 0, 1")
+        
+        victory = board.checkLinkInPosition(Board.Position(row: 1, column: 1), player: player, linksToWin: 3)
+        
+        XCTAssertTrue(victory, "the player should win checking the position 1, 1")
+        
+        victory = board.checkLinkInPosition(Board.Position(row: 2, column: 1), player: player, linksToWin: 3)
+        
+        XCTAssertTrue(victory, "the player should win checking the position 2, 1")
+    }
+    
+    func testCheckLinkInPositionWithFirstDiagonalLink(){
+        let board = Board(numRows: 5, numColumns: 5)
+        let player = Player(name: "testPlayer")
+        
+        board.setPosition(Board.Position(row: 0, column: 0), player: player)
+        board.setPosition(Board.Position(row: 1, column: 1), player: player)
+        board.setPosition(Board.Position(row: 2, column: 2), player: player)
+        
+        var victory = false
+        
+        victory = board.checkLinkInPosition(Board.Position(row: 0, column: 0), player: player, linksToWin: 3)
+        
+        XCTAssertTrue(victory, "the player should win checking the position 0, 0")
+        
+        victory = board.checkLinkInPosition(Board.Position(row: 1, column: 1), player: player, linksToWin: 3)
+        
+        XCTAssertTrue(victory, "the player should win checking the position 1, 1")
+        
+        victory = board.checkLinkInPosition(Board.Position(row: 2, column: 2), player: player, linksToWin: 3)
+        
+        XCTAssertTrue(victory, "the player should win checking the position 2, 2")
+    }
+
+    func testCheckLinkInPositionWithSecondDiagonalLink(){
+        let board = Board(numRows: 5, numColumns: 5)
+        let player = Player(name: "testPlayer")
+        
+        board.setPosition(Board.Position(row: 2, column: 0), player: player)
+        board.setPosition(Board.Position(row: 1, column: 1), player: player)
+        board.setPosition(Board.Position(row: 0, column: 2), player: player)
+        
+        var victory = false
+        
+        victory = board.checkLinkInPosition(Board.Position(row: 2, column: 0), player: player, linksToWin: 3)
+        
+        XCTAssertTrue(victory, "the player should win checking the position 2, 0")
+        
+        victory = board.checkLinkInPosition(Board.Position(row: 1, column: 1), player: player, linksToWin: 3)
+        
+        XCTAssertTrue(victory, "the player should win checking the position 1, 1")
+        
+        victory = board.checkLinkInPosition(Board.Position(row: 0, column: 2), player: player, linksToWin: 3)
+        
+        XCTAssertTrue(victory, "the player should win checking the position 0, 2")
+    }
+    
+    
     private func checkPlayerOfPosition(position: Board.PositionType, player: Player) -> Bool {
         
         var isPlayer = false
