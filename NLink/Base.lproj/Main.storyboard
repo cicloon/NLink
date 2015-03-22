@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,21 +16,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwM-PA-RcX">
-                                <rect key="frame" x="16" y="20" width="33" height="30"/>
-                                <state key="normal" title="Start">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkE-SL-8fp">
+                                <rect key="frame" x="262" y="285" width="76" height="30"/>
+                                <state key="normal" title="New Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="boardStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9n1-Ib-KhW"/>
+                                    <segue destination="KDe-ZK-tDf" kind="show" id="Fnc-AT-8aE"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wkE-SL-8fp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qb4-3o-ud6"/>
+                            <constraint firstItem="wkE-SL-8fp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jZr-RU-1yX"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-347" y="60"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qem-Pp-mh1">
+            <objects>
+                <viewController id="KDe-ZK-tDf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oTR-6t-ghu"/>
+                        <viewControllerLayoutGuide type="bottom" id="fJm-0D-ATK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IM0-2u-yEc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKz-Mo-RTb">
+                                <rect key="frame" x="0.0" y="28" width="600" height="552"/>
+                                <connections>
+                                    <segue destination="s7H-XL-t8N" kind="embed" id="afc-mj-vul"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsf-93-sgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362" y="60"/>
+        </scene>
+        <!--Board View Controller-->
+        <scene sceneID="B8U-in-PAy">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="s7H-XL-t8N" customClass="BoardViewController" customModule="NLink" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n7J-CX-Kx7"/>
+                        <viewControllerLayoutGuide type="bottom" id="QLl-7k-yp8"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XEQ-9g-3u8" customClass="BoardView" customModule="NLink" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="552"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="boardView" destination="XEQ-9g-3u8" id="7Q0-dI-FZL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6F-DT-gdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362" y="852"/>
         </scene>
     </scenes>
 </document>

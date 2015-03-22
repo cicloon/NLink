@@ -21,9 +21,5 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func boardStart(sender: AnyObject) {
-        var board = Board(numRows: 5, numColumns: 5)
-        
-    }
 }
 

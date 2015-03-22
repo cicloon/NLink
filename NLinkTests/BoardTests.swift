@@ -174,6 +174,5 @@ class BoardTests: XCTestCase {
         return isPlayer
     }
     
-    
 }
 
